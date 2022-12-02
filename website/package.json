@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "homepage": "https://mayurdhepe.github.io/CS-5744-Project-2/docs/introduction",
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
