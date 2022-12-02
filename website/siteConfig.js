@@ -11,13 +11,8 @@
 const siteConfig = {
   title: 'CS 5744 - Project 2 - Test Plan for RideVT',
   tagline: 'A website for testing',
-  url: '',
-  baseUrl: '../../',
-  projectName: '',
-  organizationName: '',
-
   // // Used for publishing and more
-  // url: 'https://mayurdhepe.github.io', // Your website URL
+  url: 'https://mayurdhepe.github.io', // Your website URL
   baseUrl: '/cs-5744-project-2/',
   projectName: 'cs-5744-project-2',
   organizationName: 'mayurdhepe',
