@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Sleep Intelligence Analysis Phase · CS 5744 - Project 2 - Test Plan for RideVT</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Build"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Sleep Intelligence Analysis Phase · CS 5744 - Project 2 - Test Plan for RideVT"/><meta property="og:type" content="website"/><meta property="og:url" content="/cs-5744-project-2/"/><meta property="og:description" content="## Build"/><meta property="og:image" content="/cs-5744-project-2/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="/cs-5744-project-2/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cs-5744-project-2/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cs-5744-project-2/js/scrollSpy.js"></script><link rel="stylesheet" href="/cs-5744-project-2/css/main.css"/><script src="/cs-5744-project-2/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cs-5744-project-2/"><img class="logo" src="/cs-5744-project-2/img/favicon.ico" alt="CS 5744 - Project 2 - Test Plan for RideVT"/><h2 class="headerTitleWithLogo">CS 5744 - Project 2 - Test Plan for RideVT</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Test Plan</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Test Scope</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/requirements">Requirements</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/traceability-matrix">Traceability Matrix</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Test Plan</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/plan">Plan Overview</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/phase-1">Sensor Data Persistence Phase</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/phase-2">User Interface Data View/Manipulation Phase</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cs-5744-project-2/docs/phase-3">Sleep Intelligence Analysis Phase</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/validation-tests">Validation Tests</a></li><li class="navListItem"><a class="navItem" href="/cs-5744-project-2/docs/conclusion">Conclusion</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Sleep Intelligence Analysis Phase</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="build"></a><a href="#build" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h2>
+<p>The build for this phase consists of two of the four modules: <abbr title="Persistence Module">DE-2</abbr>, <abbr title="Sleep Intelligence Module">DE-3</abbr>.</p>
+<h2><a class="anchor" aria-hidden="true" id="purpose"></a><a href="#purpose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Purpose</h2>
+<p>The purpose of this phase is to verify that the sleep intelligence module is correctly notified when new data is available and correctly pushes new data back to the persistence module upon analysis completion. The testing of this phase will not directly validate any requirements, but it does relate strongly to requirements 3.1 - 3.4 and 1.4. The data produced by the analysis is used to satisfy these requirements.</p>
+<h2><a class="anchor" aria-hidden="true" id="test-cases"></a><a href="#test-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test Cases</h2>
+<table>
+<thead>
+<tr><th>Test</th><th>Goal</th><th>Procedure</th></tr>
+</thead>
+<tbody>
+<tr><td>3.1</td><td>New data triggers analysis.</td><td>Insert new sleep sensor data into persistent module. Verify analysis is triggered and completed by the presence of additional data in storage.</td></tr>
+<tr><td>3.2</td><td>Analysis triggers controlled device modification.</td><td>Insert new sleep sensor data that will force the analysis to result in recommendations for changes in controlled devices. Observe persistent module is updated accordingly.</td></tr>
+<tr><td>3.3</td><td>Analysis recognizes custom alarms.</td><td>Insert a user-defined alarm and sleep sensor data into the persistent store. Verify the analysis is triggered and alerts to the possible issue.</td></tr>
+<tr><td>3.4</td><td>Analysis operates in real-time.</td><td>Insert new sleep sensor data into persistent module. After analysis is triggered insert additional data. Observe the final analysis is based on recent data and not the initial data.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="additional-software"></a><a href="#additional-software" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional Software</h2>
+<p>No additional overhead software will be required to carry out this phase of testing. If a tool is created for the <a href="/cs-5744-project-2/docs/phase-2">User Interface Data View/Manipulation Phase</a> to handle inserting data in the persistence module it may also be used here to improve the efficiency of this phase.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cs-5744-project-2/docs/phase-2"><span class="arrow-prev">← </span><span>User Interface Data View/Manipulation Phase</span></a><a class="docs-next button" href="/cs-5744-project-2/docs/validation-tests"><span>Validation Tests</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#build">Build</a></li><li><a href="#purpose">Purpose</a></li><li><a href="#test-cases">Test Cases</a></li><li><a href="#additional-software">Additional Software</a></li></ul></nav></div><footer class="nav-footer" id="footer"></footer></div></body></html>
